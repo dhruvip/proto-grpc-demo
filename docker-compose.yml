@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  server:
+    image: proto-demo
+    build: .
+    ports:
+      - 9090:9090
+    command: "python server.py"
+  client:
+    image: proto-demo
+    build: .
+    ports:
+      - 9092:9092
+    command: "python client.py"

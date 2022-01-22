@@ -1,11 +1,13 @@
 syntax = "proto3";
 
 package hello;
-
+import "google/protobuf/empty.proto";
 
 service HelloService {
     rpc SayHello (HelloRequest) returns (HelloResponse) {}
     rpc SayStrictHello (HelloRequest) returns (HelloResponse) {}
+    rpc Ping (google.protobuf.Empty) returns (google.protobuf.Empty);
+
 }
 
 message HelloRequest {

@@ -2,7 +2,7 @@ from concurrent import futures
 import grpc
 from hello_pb2_grpc import HelloServiceServicer, add_HelloServiceServicer_to_server
 from hello_pb2 import HelloResponse 
-
+import google.protobuf.empty_pb2 as empty_pb2
 class handler(HelloServiceServicer):
     def SayHello(self, request, context):
         return HelloResponse(resp_message=f"Helllos {request.name}")
@@ -16,6 +16,10 @@ class handler(HelloServiceServicer):
         else:
             return HelloResponse(resp_message=f"Helllos {request.name}")
 
+    def Ping(self, request,context):
+        print('Hellow therer; yes we are active')
+        return empty_pb2.Empty()
+
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
     add_HelloServiceServicer_to_server(handler(),server)
@@ -23,7 +27,7 @@ def serve():
     server.start()
     try:
         while True:
-            print('..')
+            pass
     except KeyboardInterrupt as k:
         print('server stopped')
         server.stop(0)

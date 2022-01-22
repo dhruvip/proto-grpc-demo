@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -19,8 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0bhello.proto\x12\x05hello\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"%\n\rHelloResponse\x12\x14\n\x0cresp_message\x18\x01 \x01(\t2\x86\x01\n\x0cHelloService\x12\x37\n\x08SayHello\x12\x13.hello.HelloRequest\x1a\x14.hello.HelloResponse\"\x00\x12=\n\x0eSayStrictHello\x12\x13.hello.HelloRequest\x1a\x14.hello.HelloResponse\"\x00\x62\x06proto3'
-)
+  serialized_pb=b'\n\x0bhello.proto\x12\x05hello\x1a\x1bgoogle/protobuf/empty.proto\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"%\n\rHelloResponse\x12\x14\n\x0cresp_message\x18\x01 \x01(\t2\xbe\x01\n\x0cHelloService\x12\x37\n\x08SayHello\x12\x13.hello.HelloRequest\x1a\x14.hello.HelloResponse\"\x00\x12=\n\x0eSayStrictHello\x12\x13.hello.HelloRequest\x1a\x14.hello.HelloResponse\"\x00\x12\x36\n\x04Ping\x12\x16.google.protobuf.Empty\x1a\x16.google.protobuf.Emptyb\x06proto3'
+  ,
+  dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
 
 
@@ -52,8 +54,8 @@ _HELLOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=22,
-  serialized_end=50,
+  serialized_start=51,
+  serialized_end=79,
 )
 
 
@@ -84,8 +86,8 @@ _HELLORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=52,
-  serialized_end=89,
+  serialized_start=81,
+  serialized_end=118,
 )
 
 DESCRIPTOR.message_types_by_name['HelloRequest'] = _HELLOREQUEST
@@ -115,8 +117,8 @@ _HELLOSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=92,
-  serialized_end=226,
+  serialized_start=121,
+  serialized_end=311,
   methods=[
   _descriptor.MethodDescriptor(
     name='SayHello',
@@ -135,6 +137,16 @@ _HELLOSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_HELLOREQUEST,
     output_type=_HELLORESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Ping',
+    full_name='hello.HelloService.Ping',
+    index=2,
+    containing_service=None,
+    input_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

@@ -3,6 +3,7 @@ import grpc
 from hello_pb2 import HelloRequest
 
 from hello_pb2_grpc import HelloServiceStub
+import google.protobuf.empty_pb2 as empty_pb2
 
 
 def call():
@@ -11,6 +12,7 @@ def call():
     name = HelloRequest(name='Testing john Doe')
     try:
         # call the rpc function
+        stub.Ping(empty_pb2.Empty())
         response = stub.SayStrictHello(name)
         print(response)
     except grpc.RpcError as e:
